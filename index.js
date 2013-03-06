@@ -60,15 +60,14 @@ function networkLogin (username, password, next) {
       },
       body: body
     }, function (err, res, body) {
-      xml2js.parseString(body, function (err, xml) {
-        try {
+      try {
+        xml2js.parseString(body, function (err, xml) {
           var match = xml['soap:Envelope']['soap:Body'][0]['m:ResolveNamesResponse'][0]['m:ResponseMessages'][0]['m:ResolveNamesResponseMessage'][0]['m:ResolutionSet'][0]['t:Resolution'][0];
-          
           next(err, flattenXmlStructure(match));
-        } catch (e) {
-          next(err, null);
-        }
-      });
+        });
+      } catch (e) {
+        next(err, null);
+      }
     });
   });
 }
