@@ -1,0 +1,15 @@
+{
+  "name": "olin",
+  "version": "0.0.1",
+  "description": "Olin College helpful libraries.",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ntlm": "~0.1.1",
+    "agentkeepalive": "~0.1.5",
+    "request": "~2.14.0",
+    "xml2js": "~0.2.6"
+  }
+}
